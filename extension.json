@@ -1,0 +1,26 @@
+{
+	"name": "GoogleDocCreator",
+	"version": "1.0.0",
+	"author": [
+		"Nischay Nahata"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:GoogleDocCreator",
+	"descriptionmsg": "GoogleDocCreator-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "parserhook",
+	"MessagesDirs": {
+		"GoogleDocCreator": [
+			"i18n"
+		]
+	},
+	"SpecialPages": {
+		"GoogleDocCreator": "SpecialGoogleDocCreator"
+	},
+	"AutoloadClasses": {
+		"SpecialGoogleDocCreator": "SpecialGoogleDocCreator.php"
+	},
+	"config": {
+		"GoogleApiClientCredentialsPath": null
+	},
+	"manifest_version": 1
+}
