@@ -1,5 +1,4 @@
 # GoogleDocCreator
-=============
 
 Creates a Google Doc in your Drive and embeds it to a wiki page using (https://www.mediawiki.org/wiki/Extension:GoogleDocTag)
 
