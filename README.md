@@ -6,6 +6,7 @@ Creates a Google Doc in your Drive and embeds it to a wiki page using (https://w
 
 Download this repo on your extensions folder
 Add the following on your LocalSettings.php: 
+
     wfLoadExtension( 'GoogleDocCreator' );
 
 Use composer to install dependencies. Run the following command from your main MediaWiki folder:
