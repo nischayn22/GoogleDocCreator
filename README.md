@@ -5,6 +5,7 @@ Creates a Google Doc in your Drive and embeds it to a wiki page using (https://w
 ## Installation
 
 Download API credentials from https://developers.google.com/drive/api/v3/quickstart/php
+
 Set the path to your credentials.json file:
 
     $wgGoogleApiClientCredentialsPath = "$IP/extensions/GoogleDocCreator/credentials.json";
@@ -12,6 +13,7 @@ Set the path to your credentials.json file:
 
 
 Download this repo on your extensions folder
+
 Add the following on your LocalSettings.php: 
 
     wfLoadExtension( 'GoogleDocCreator' );
