@@ -35,11 +35,9 @@ class SpecialGoogleDocCreator extends SpecialPage {
 		$client->setAuthConfig( $wgGoogleApiClientCredentialsPath );
 		$client->setAccessType('offline');
 
-		// Load previously authorized credentials from a file.
-		$credentialsPath = 'token.json';
-		if (file_exists($credentialsPath)) {
-			$accessToken = json_decode(file_get_contents($credentialsPath), true);
-		} else {
+		$cache_object = ObjectCache::getInstance( CACHE_DB );
+		$accessToken = $cache_object->get( "google-doc-creator-access-token" );
+		if ( empty( $accessToken ) ) {
 			if ( empty( $this->getRequest()->getVal( 'auth_code' ) ) ) {
 				// Request authorization from the user.
 				$authUrl = $client->createAuthUrl();
@@ -71,18 +69,14 @@ class SpecialGoogleDocCreator extends SpecialPage {
 				throw new Exception(join(', ', $accessToken));
 			}
 
-			// Store the credentials to disk.
-			if (!file_exists(dirname($credentialsPath))) {
-				mkdir(dirname($credentialsPath), 0700, true);
-			}
-			file_put_contents($credentialsPath, json_encode($accessToken));
+			$cache_object->set( "google-doc-creator-access-token", $accessToken, 600 );
 		}
 		$client->setAccessToken($accessToken);
 
 		// Refresh the token if it's expired.
 		if ($client->isAccessTokenExpired()) {
 			$client->fetchAccessTokenWithRefreshToken($client->getRefreshToken());
-			file_put_contents($credentialsPath, json_encode($client->getAccessToken()));
+			$cache_object->set( "google-doc-creator-access-token", $client->getAccessToken(), 600 );
 		}
 
 		if ( empty( $this->getRequest()->getVal( 'wikipage_name' ) ) ) {
