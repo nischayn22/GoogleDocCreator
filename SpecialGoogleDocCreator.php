@@ -6,7 +6,7 @@
  */
 class SpecialGoogleDocCreator extends SpecialPage {
 	public function __construct() {
-		parent::__construct( 'GoogleDocCreator', 'GoogleDocCreator' );
+		parent::__construct( 'GoogleDocCreator', 'googledoccreator' );
 	}
 
 	/**
