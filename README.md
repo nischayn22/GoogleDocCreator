@@ -5,6 +5,7 @@ Creates a Google Doc in your Drive and embeds it to a wiki page using (https://w
 ## Installation
 
 Download API credentials from https://github.com/googleapis/google-api-php-client/blob/HEAD/docs/oauth-web.md#create-authorization-credentials
+Set Redirect URL as: http://localhost/mw_35/index.php/Special:GoogleDocCreator
 
 Set the path to your credentials.json file:
 
