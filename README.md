@@ -29,7 +29,8 @@ Visit the special page Special:GoogleDocCreator on your wiki. You must be logged
 You must have GoogleDocTag installed for the embedding to work.
 
 For creating a linked Google Doc use:
-<google_drive_linked_folder copy_file_id="1enbgrvcs7skgffMesfd1DJURNLOSoTA0" parent_file_id="1gMcc3KtyeZD4Z6I1Ns0rHChO1JESwz2Y"/>
+
+    <google_drive_linked_folder copy_file_id="1enbgrvcs7skgffMesfd1DJURNLOSoTA0" parent_file_id="1gMcc3KtyeZD4Z6I1Ns0rHChO1JESwz2Y"/>
 
 copy_file_id is the id of the file/folder used as a template.
 parent_file_id is the id of the folder where the newly created files will be stored.
