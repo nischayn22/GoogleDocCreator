@@ -16,6 +16,6 @@
 		}
 	],
 	"require": {
-		"google/apiclient": "2.2.1"
+		"google/apiclient": "2.13.0"
 	}
 }

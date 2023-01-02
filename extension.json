@@ -19,6 +19,10 @@
 	"AutoloadClasses": {
 		"SpecialGoogleDocCreator": "SpecialGoogleDocCreator.php"
 	},
+	"Hooks": {
+	    "ParserFirstCallInit": "SpecialGoogleDocCreator::onParserFirstCallInit",
+		"LoadExtensionSchemaUpdates": "SpecialGoogleDocCreator::onLoadExtensionSchemaUpdates"
+	},
 	"config": {
 		"GoogleApiClientCredentialsPath": null
 	},
